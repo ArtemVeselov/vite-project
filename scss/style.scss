@@ -1,10 +1,211 @@
-// @tailwind base;
-// @tailwind components;
-// @tailwind utilities;
-@import "normalize.css/normalize";
-@import "variables";
+@import "vars";
+@import "fonts";
+@import "reset";
+@import "libs";
+@import "global";
 
+.header {
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 120px;
+  }
+  &__btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+}
+.logo {
+  margin: 0 auto;
+}
+.menu {
+  padding-right: 15px;
+  &__list {
+    display: flex;
+  }
+  &__list-item {
+    padding-left: 45px;
+    padding-right: 35px;
+  }
+  &__list-link {
+    @extend %title-font;
+    color: rgba(54, 56, 56, 0.9);
+    line-height: 22px;
+  }
+}
 
-.test {
-    color: aqua;
+.footer {
+  &__content {
+    background-color: #dfdfdf;
+    padding: 60px 0 80px;
+  }
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__info {
+    width: 540px;
+  }
+  &__info-title {
+    color: $title;
+    @extend %title-font;
+    margin-bottom: 14px;
+    line-height: 23px;
+  }
+  &__info-text {
+    margin-bottom: 16px;
+    max-width: 475px;
+  }
+  &__info-email {
+    font-weight: 600;
+    color: $title;
+    font-size: 14px;
+    margin-bottom: 22px;
+    padding-left: 30px;
+    display: inline-block;
+    position: relative;
+    &::before {
+      content: "";
+      background-image: url(../assets/images/envelope.svg);
+      position: absolute;
+      top: 8px;
+      left: 0;
+      width: 16px;
+      height: 12px;
+    }
+  }
+  &__form {
+    display: flex;
+  }
+  &__form-input {
+    padding: 6px 10px 6px 18px;
+    border-radius: 21px;
+    background-color: transparent;
+    border: 1px solid rgba($title, 0.7);
+    width: 100%;
+    &::placeholder {
+      font-family: "Open Sans", sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 27px;
+      color: #a1a1a1;
+    }
+  }
+  &__form-button {
+    background-color: $title;
+    border: none;
+    color: #fffff0;
+    border-radius: 21px;
+    font-weight: 600;
+    padding: 6px 12px;
+    min-width: 160px;
+    margin-left: 9px;
+  }
+  &__social {
+    width: 125px;
+    margin-right: auto;
+    margin-left: 100px;
+  }
+  &__social-link {
+    padding-left: 28px;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 1px;
+      left: 0;
+      width: 16px;
+      height: 16px;
+    }
+  }
+  &__social-link--facebook::before {
+    background-image: url(../assets/images/facebook.svg);
+  }
+  &__social-link--istagram::before {
+    background-image: url(../assets/images/instagram.svg);
+    width: 14px;
+    height: 14px;
+    top: 2px;
+  }
+  &__social-link--pinterest::before {
+    background-image: url(../assets/images/pinterest.svg);
+  }
+  &__social-link--whatsapp::before {
+    background-image: url(../assets/images/whatsapp.svg);
+    width: 14px;
+    height: 14px;
+  }
+  &__social-link--youtube::before {
+    background-image: url(../assets/images/youtube.svg);
+    width: 18px;
+    height: 12px;
+    top: 2px;
+  }
+  &__social-item,
+  &__menu-item {
+    margin-bottom: 15px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #707070;
+  }
+  &__social-link,
+  &__menu-link {
+    color: #707070;
+  }
+  &__menu {
+    margin-right: 60px;
+    width: 125px;
+  }
+  //   &__menu-link {
+  //   }
+  &__copyright {
+    background-color: $title;
+    color: #a1a1a1;
+    text-align: center;
+    padding: 42px 0 41px;
+  }
+}
+.rightside-menu {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  max-width: 694px;
+  background-color: #fff;
+  padding-top: 40px;
+  &.rightside-menu--close {
+    transform: translateX(100%);
+  }
+  &__close {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    margin-left: 50px;
+    margin-bottom: 60px;
+  }
+  &__content {
+    text-align: center;
+    max-width: 485px;
+    margin: 0 auto;
+  }
+  &__logo {
+    margin-bottom: 40px;
+    display: inline-block;
+  }
+  &__title {
+    color: $title;
+    @extend %title-font;
+    font-size: 36px;
+    line-height: 51px;
+  }
+  &__text {
+    margin-bottom: 75px;
+  }
+  &__img {
+    max-width: 485px;
+  }
 }
